@@ -1,4 +1,4 @@
-Build.pl
+Build.PL
 Changes
 lib/Object/Lazy.pm
 lib/Object/Lazy/Ref.pm

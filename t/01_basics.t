@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use Test::More tests => 13;
 
-BEGIN { use_ok('Object::Lazy', 0.01) }
+BEGIN { use_ok('Object::Lazy') }
 
 # build at isa
 my $object = Object::Lazy->new(\&TestSample::create_object);

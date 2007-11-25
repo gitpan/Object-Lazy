@@ -4,16 +4,14 @@ use warnings;
 use Module::Build;
 
 my $build = Module::Build->new(
-    module_name => 'Object::Lazy',
-    license => 'perl',
-    dist_author => 'Steffen Winkler - steffenw@cpan.org',
+    module_name        => 'Object::Lazy',
+    license            => 'perl',
+    dist_author        => 'Steffen Winkler - steffenw@cpan.org',
     dist_version_from  => 'lib/Object/Lazy.pm',
-    requires => {
+    requires           => {
         'Carp'             => '0',
         'English'          => '0',
         'Params::Validate' => '0',
-    },
-    optional => {
     },
     build_requires => {
         'Test::More' => '0',

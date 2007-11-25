@@ -1,6 +1,6 @@
 ---
 name: Object-Lazy
-version: 0.01
+version: 0.02
 author:
   - 'Steffen Winkler - steffenw@cpan.org'
 abstract: create objects late from non-owned classes
@@ -16,7 +16,7 @@ build_requires:
 provides:
   Object::Lazy:
     file: lib/Object/Lazy.pm
-    version: 0.01
+    version: 0.02
   Object::Lazy::Ref:
     file: lib/Object/Lazy/Ref.pm
     version: 0.01

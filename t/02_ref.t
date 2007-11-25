@@ -6,8 +6,8 @@ use warnings;
 use Test::More tests => 4;
 
 BEGIN {
-    use_ok('Object::Lazy', 0.01);
-    use_ok('Object::Lazy::Ref', 0.01);
+    use_ok('Object::Lazy');
+    use_ok('Object::Lazy::Ref');
 }
 
 # ref
