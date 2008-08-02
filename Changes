@@ -1,7 +1,12 @@
 Revision history for Perl extension Object::Lazy.
 
-0.01  Fri Nov 11 19:00:00 2007
-- fist version
+0.03  Sat Aug 02 20:00:00 2008
+- repair POD
+- add example
+- better Kwalitee
 
 0.02  Sun Nov 25 23:00:00 2007
 - Build.pl renamed to Build.PL
+
+0.01  Fri Nov 11 19:00:00 2007
+- fist version

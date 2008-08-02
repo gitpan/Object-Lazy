@@ -1,29 +1,31 @@
 ---
 name: Object-Lazy
-version: 0.02
+version: 0.03
 author:
-  - 'Steffen Winkler - steffenw@cpan.org'
-abstract: create objects late from non-owned classes
+  - 'Steffen Winkler <steffenw at cpan.org>'
+abstract: 'Object::Lazy - create objects late from non-owned classes'
 license: perl
 resources:
   license: http://dev.perl.org/licenses/
 requires:
-  Carp: 0
-  English: 0
   Params::Validate: 0
 build_requires:
+  Test::Simple: 0
+recommends:
   Test::More: 0
+  Test::Pod: 1.14
+  Test::Pod::Coverage: 1.04
 provides:
   Object::Lazy:
     file: lib/Object/Lazy.pm
-    version: 0.02
+    version: 0.03
   Object::Lazy::Ref:
     file: lib/Object/Lazy/Ref.pm
     version: 0.01
   Object::Lazy::Validate:
     file: lib/Object/Lazy/Validate.pm
     version: 0.01
-generated_by: Module::Build version 0.2801
+generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
   version: 1.2

@@ -3,7 +3,7 @@ package Object::Lazy;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use Carp ();
 use English qw($EVAL_ERROR);
@@ -88,52 +88,57 @@ Object::Lazy - create objects late from non-owned classes
 
 =head1 VERSION
 
-0.01
+0.03
 
 =head1 SYNOPSIS
 
- use Foo 123; # because the class of the real object is Foo, version could be 123
- use Object::Lazy;
+    use Foo 123; # because the class of the real object is Foo, version could be 123
+    use Object::Lazy;
 
- my $foo = Object::Lazy->new(
-     sub{
-         return Foo->new();
-     },
- );
+    my $foo = Object::Lazy->new(
+        sub{
+            return Foo->new();
+        },
+    );
 
- bar($foo);
+    bar($foo);
 
- sub bar {
-     my $foo = shift;
+    sub bar {
+        my $foo = shift;
 
-     if ($condition) {
-         # a foo object will be created
-         print $foo->output();
-     }
-     else {
-         # foo object is not created
-     }
+        if ($condition) {
+            # a foo object will be created
+            print $foo->output();
+        }
+        else {
+            # foo object is not created
+        }
 
-     return;
- }
+        return;
+    }
 
 To combine this and a lazy use, write somthing like that:
 
- use Object::Lazy;
+    use Object::Lazy;
 
- my $foo = Object::Lazy->new(
-     sub{
-         my $code = 'use Foo 123';
-         eval $code;
-         $@ and die "$code $@";
-         return Foo->new();
-     },
- );
+    my $foo = Object::Lazy->new(
+        sub{
+            my $code = 'use Foo 123';
+            eval $code;
+            $@ and die "$code $@";
+            return Foo->new();
+        },
+    );
 
- # and so on
+    # and so on
 
 Read topic SUBROUTINES/METHODS to find the entended constructor
 and all the optional parameters.
+
+=head1 EXAMPLE
+
+Inside of this Distribution is a directory named example.
+Run this *.pl files.
 
 =head1 DESCRIPTION
 
@@ -154,17 +159,17 @@ Method isa and method can is implemented.
 
 =head3 short constructor
 
- $object = Object::Lazy->new(sub{
-     return RealClass->new(...);
- });
+    $object = Object::Lazy->new(sub{
+        return RealClass->new(...);
+    });
 
 =head3 extended constructor
 
- $object = Object::Lazy->new({
-     build => sub {
-         return RealClass->new(...);
-     },
- });
+    $object = Object::Lazy->new({
+        build => sub {
+            return RealClass->new(...);
+        },
+    });
 
 =over 4
 
@@ -180,42 +185,46 @@ then the class method C<RealClass->isa(...);> checks the class or inheritance.
 Otherwise the isa parameter is a full notation of the class
 and possible of the inheritance.
 
- $object = Object::Lazy->new({
-     ...
-     isa => 'RealClass',
- );
+    $object = Object::Lazy->new({
+        ...
+        isa => 'RealClass',
+    });
 
 or
 
- $object = Object::Lazy->new({
-     ...
-     isa => [qw(RealClass BaseClassOfRealClass)],
- );
+    $object = Object::Lazy->new({
+        ...
+        isa => [qw(RealClass BaseClassOfRealClass)],
+    });
 
 =item * optional parameter logger
 
 Optional notation of the logger code to show the build process.
 
- $object = Object::Lazy->new({
-     ...
-     logger => sub {
-         my $at_stack = shift;
-         return qq{Object "RealClass" built $at_stack}
-     },
- );
+    $object = Object::Lazy->new({
+        ...
+        logger => sub {
+            my $at_stack = shift;
+            print "RealClass at_stack";
+        },
+    });
 
 =item * optional parameter ref
 
 Optional notation of the ref answer.
 
- use Scalar::Lazy::Ref; # overwrite CORE::GLOBAL::ref
+It is not a good idea to use the Object::Lazy::Ref module by default.
+But there are situations, the lazy idea would run down the river
+if I had not implemented this feature.
 
- $object = Object::Lazy->new({
-     ...
-     ref => 'RealClass',
- );
+    use Object::Lazy::Ref; # overwrite CORE::GLOBAL::ref
 
- $boolean_true = ref $object eq 'RealClass';
+    $object = Object::Lazy->new({
+        ...
+        ref => 'RealClass',
+    });
+
+    $boolean_true = ref $object eq 'RealClass';
 
 =back
 
@@ -226,17 +235,17 @@ If no isa parameter was given at method new, the object will build.
 Otherwise the method isa checks by isa class method
 or only the given parameters.
 
- $boolean = $obejct->isa('RealClass');
+    $boolean = $obejct->isa('RealClass');
 
 or
 
- $boolean = $obejct->isa('BaseClassOfRealClass');
+    $boolean = $obejct->isa('BaseClassOfRealClass');
 
 =head2 method can
 
 The object will build. After that the can method checks the built object.
 
- $coderef_or_undef = $object->can('method');
+    $coderef_or_undef = $object->can('method');
 
 =head1 DIAGNOSTICS
 
@@ -248,7 +257,11 @@ nothing
 
 =head1 DEPENDENCIES
 
-nothing
+Carp
+
+L<English>
+
+L<Object::Lazy::Validate>
 
 =head1 INCOMPATIBILITIES
 
@@ -280,9 +293,9 @@ Steffen Winkler
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2007,
+Copyright (c) 2007 - 2008,
 Steffen Winkler
-C<< <steffenw@cpan.org> >>.
+C<< <steffenw at cpan.org> >>.
 All rights reserved.
 
 This module is free software;

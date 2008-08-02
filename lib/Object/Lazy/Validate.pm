@@ -64,11 +64,11 @@ Object::Lazy::Validate - validator and initializer for Object::Lazy
 
 =head1 SYNOPSIS
 
- use Object::Lazy::Validate;
+    use Object::Lazy::Validate;
 
- my ($class, $params) = Object::Lazy::Validate::validate_new(@_);
+    my ($class, $params) = Object::Lazy::Validate::validate_new(@_);
 
- $params = Object::Lazy::Validate::init($params);
+    $params = Object::Lazy::Validate::init($params);
 
 =head1 DESCRIPTION
 
@@ -94,7 +94,7 @@ nothing
 
 =head1 DEPENDENCIES
 
-nothing
+L<Params::Validate>
 
 =head1 INCOMPATIBILITIES
 
@@ -110,9 +110,9 @@ Steffen Winkler
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2007,
+Copyright (c) 2007 - 2008,
 Steffen Winkler
-C<< <steffenw@cpan.org> >>.
+C<< <steffenw at cpan.org> >>.
 All rights reserved.
 
 This module is free software;

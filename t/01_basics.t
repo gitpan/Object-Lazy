@@ -3,6 +3,7 @@
 use 5.006001;
 use strict;
 use warnings;
+
 use Test::More tests => 13;
 
 BEGIN { use_ok('Object::Lazy') }

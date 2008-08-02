@@ -8,10 +8,8 @@ WriteMakefile
           'EXE_FILES' => [],
           'VERSION_FROM' => 'lib/Object/Lazy.pm',
           'PREREQ_PM' => {
-                           'Test::More' => '0',
-                           'Params::Validate' => '0',
-                           'English' => '0',
-                           'Carp' => '0'
+                           'Params::Validate' => 0,
+                           'Test::Simple' => 0
                          }
         )
 ;

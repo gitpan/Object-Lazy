@@ -40,9 +40,9 @@ Object::Lazy::Ref - Simulation of C<ref $object> for Object::Lazy
 
 =head1 SYNOPSIS
 
- use Object::Lazy::Ref;
+    use Object::Lazy::Ref;
 
- Object::Lazy::Ref::register($object);
+    Object::Lazy::Ref::register($object);
 
 =head1 DESCRIPTION
 
@@ -54,7 +54,7 @@ Simulation of C<ref $obj> for Object::Lazy
 
 switch on the simulation.
 
- Object::Lazy::Ref::register($object);
+    Object::Lazy::Ref::register($object);
 
 =head1 DIAGNOSTICS
 
@@ -84,7 +84,7 @@ Steffen Winkler
 
 Copyright (c) 2007,
 Steffen Winkler
-C<< <steffenw@cpan.org> >>.
+C<< <steffenw at cpan.org> >>.
 All rights reserved.
 
 This module is free software;

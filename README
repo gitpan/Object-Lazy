@@ -1,4 +1,4 @@
-Object::Lazy version 0.01
+Object::Lazy version 0.03
 =========================
 
 Create objects late from non-owned classes.
@@ -16,7 +16,14 @@ Method isa and method can is implemented.
 
 INSTALLATION
 
-To install this module type the following:
+To install this module, run the following commands:
+
+    perl Makefile.PL
+    make
+    make test
+    make install
+
+Alternatively, to install with Module::Build, you can use the following commands:
 
     perl Build.PL
     ./Build
@@ -33,9 +40,9 @@ This module requires these other modules and libraries:
 
 COPYRIGHT AND LICENCE
 
-Copyright (c) 2007,
+Copyright (c) 2007 - 2008,
 Steffen Winkler
-steffenw@cpan.org.
+steffenw at cpan.org.
 All rights reserved.
 
 This module is free software;
