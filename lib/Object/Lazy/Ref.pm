@@ -5,14 +5,22 @@ use warnings;
 
 our $VERSION = '0.01';
 
+use Carp qw(croak);
+
 my %register;
 
 BEGIN {
+    my $old_core_global_ref = *CORE::GLOBAL::ref;
     *CORE::GLOBAL::ref = sub ($) {
         my $ref = shift;
-        return exists $register{$ref}
-               ? $register{$ref}
-               : CORE::ref($ref);
+
+        return
+            exists $register{$ref}
+            ? $register{$ref}
+            : do {
+                local *CORE::GLOBAL::ref = $old_core_global_ref;
+                ref $ref;
+            };
     }
 }
 
@@ -23,6 +31,8 @@ sub register {
 
     return;
 }
+
+# $Id$
 
 1;
 
@@ -70,7 +80,15 @@ nothing
 
 =head1 INCOMPATIBILITIES
 
-not known
+This module will change *CORE::GLOBAL::ref premanently.
+If a call of sub ref not matched with an registered Object::Lazy object
+the *CORE::GLOBAL::ref will be restored during call
+and will fall back after that.
+
+When another programm decided to change *CORE::GLOBAL::ref permanently
+it has to fallback to the old *CORE::GLOBAL::ref too.
+This is than the Object::Lazy one.
+When it bails out to CORE::ref, the pipe is broken.
 
 =head1 BUGS AND LIMITATIONS
 
@@ -82,7 +100,7 @@ Steffen Winkler
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2007,
+Copyright (c) 2007 - 2009,
 Steffen Winkler
 C<< <steffenw at cpan.org> >>.
 All rights reserved.

@@ -4,18 +4,20 @@ use warnings;
 use Module::Build;
 
 Module::Build->new(
-    module_name        => 'Object::Lazy',
-    license            => 'perl',
-    dist_abstract      => 'Object::Lazy - create objects late from non-owned classes',
-    dist_author        => 'Steffen Winkler <steffenw at cpan.org>',
-    dist_version_from  => 'lib/Object/Lazy.pm',
-    requires           => {
+    module_name       => 'Object::Lazy',
+    license           => 'perl',
+    dist_abstract     => 'Object::Lazy - create objects late from non-owned classes',
+    dist_author       => 'Steffen Winkler <steffenw at cpan.org>',
+    dist_version_from => 'lib/Object/Lazy.pm',
+    requires          => {
         # Carp             => 0, # perl dist
         # English          => 0, # perl dist
         'Params::Validate' => 0,
     },
     build_requires => {
         'Test::Simple' => 0, # for Test::More
+        'Test::NoWarnings'  => 0,
+        'Test::Exception'   => 0,
     },
     recommends => {
         # build

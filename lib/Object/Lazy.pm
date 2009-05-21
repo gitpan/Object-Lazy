@@ -3,13 +3,13 @@ package Object::Lazy;
 use strict;
 use warnings;
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use Carp ();
-use English qw($EVAL_ERROR);
+use English qw(-no_match_vars $EVAL_ERROR);
 use Object::Lazy::Validate 0.01;
 
-sub new {
+sub new { ## no critic (ArgUnpacking)
     my ($class, $params) = Object::Lazy::Validate::validate_new(@_);
 
     $params = Object::Lazy::Validate::init($params);
@@ -28,7 +28,7 @@ my $build_object = sub {
     # don't build a second time
     $self->{build} = sub {return $built_object};
     if (! $self->{is_built} && exists $self->{logger}) {
-        eval {
+        () = eval {
             Carp::confess('object built');
         };
         $self->{logger}->($EVAL_ERROR);
@@ -40,7 +40,7 @@ my $build_object = sub {
 
 sub DESTROY {} # is not AUTOLOAD
 
-AUTOLOAD {
+sub AUTOLOAD { ## no critic (Autoloading ArgUnpacking)
     my ($self, @params) =  @_;
 
     $_[0] = my $built_object
@@ -76,6 +76,8 @@ sub can {
     return $built_object->SUPER::can($method);
 }
 
+# $Id$
+
 1;
 
 __END__
@@ -88,7 +90,7 @@ Object::Lazy - create objects late from non-owned classes
 
 =head1 VERSION
 
-0.03
+0.04
 
 =head1 SYNOPSIS
 
@@ -259,7 +261,7 @@ nothing
 
 Carp
 
-L<English>
+English
 
 L<Object::Lazy::Validate>
 
@@ -293,7 +295,7 @@ Steffen Winkler
 
 =head1 LICENSE AND COPYRIGHT
 
-Copyright (c) 2007 - 2008,
+Copyright (c) 2007 - 2009,
 Steffen Winkler
 C<< <steffenw at cpan.org> >>.
 All rights reserved.

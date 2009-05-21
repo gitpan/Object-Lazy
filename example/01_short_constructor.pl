@@ -3,6 +3,8 @@
 use strict;
 use warnings;
 
+our $VERSION = 0;
+
 use Object::Lazy;
 
 my $object = Object::Lazy->new(
@@ -15,17 +17,18 @@ my $object = Object::Lazy->new(
 );
 
 sub do_something_with {
-    my ($object, $condition) = @_;
+    my ($object, $condition) = @_; ## no critic (ReusedNames)
 
     if ($condition) {
         # the Data::Dumper object will be created
-        print $object->Dump();
+        () = print $object->Dump();
     }
     else {
         # the Data::Dumper object is not created
     }
-    print "\$condition = $condition;\n";
-    print qq{'$object' = "\$object";\n};
+    () = print
+        "\$condition = $condition;\n",
+        qq{'$object' = "\$object";\n};
 
     return;
 }
@@ -35,3 +38,5 @@ do_something_with($object, 0);
 
 # build the real object and call method Dump
 do_something_with($object, 1);
+
+# $Id$

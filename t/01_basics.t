@@ -4,7 +4,9 @@ use 5.006001;
 use strict;
 use warnings;
 
-use Test::More tests => 13;
+use Test::More tests => 13 + 1;
+use Test::Exception;
+use Test::NoWarnings;
 
 BEGIN { use_ok('Object::Lazy') }
 
@@ -50,13 +52,16 @@ $object = Object::Lazy->new({
 $object->method();
 
 # ref
-eval {
-    $object = Object::Lazy->new({
-        build => \&TestSample::create_object,
-        ref   => 'MyClass',
-    });
-};
-like $@, qr{depends \s use \s Object::Lazy::Ref}xms, 'error at paramater ref';
+throws_ok(
+    sub {
+        $object = Object::Lazy->new({
+            build => \&TestSample::create_object,
+            ref   => 'MyClass',
+        });
+    },
+    qr{depends \s use \s Object::Lazy::Ref}xms,
+    'error at paramater ref',
+);
 $object = Object::Lazy->new({
     build => \&TestSample::create_object,
 });

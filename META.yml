@@ -1,6 +1,6 @@
 ---
 name: Object-Lazy
-version: 0.03
+version: 0.04
 author:
   - 'Steffen Winkler <steffenw at cpan.org>'
 abstract: 'Object::Lazy - create objects late from non-owned classes'
@@ -10,6 +10,8 @@ resources:
 requires:
   Params::Validate: 0
 build_requires:
+  Test::Exception: 0
+  Test::NoWarnings: 0
   Test::Simple: 0
 recommends:
   Test::More: 0
@@ -18,14 +20,14 @@ recommends:
 provides:
   Object::Lazy:
     file: lib/Object/Lazy.pm
-    version: 0.03
+    version: 0.04
   Object::Lazy::Ref:
     file: lib/Object/Lazy/Ref.pm
     version: 0.01
   Object::Lazy::Validate:
     file: lib/Object/Lazy/Validate.pm
     version: 0.01
-generated_by: Module::Build version 0.2808
+generated_by: Module::Build version 0.33
 meta-spec:
-  url: http://module-build.sourceforge.net/META-spec-v1.2.html
-  version: 1.2
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4

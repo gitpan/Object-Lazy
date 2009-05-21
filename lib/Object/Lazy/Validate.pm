@@ -7,7 +7,7 @@ our $VERSION = '0.01';
 
 use Params::Validate qw(:all);
 
-sub validate_new {
+sub validate_new { ## no critic (ArgUnpacking)
     return validate_with(
         params => \@_,
         spec   => [
@@ -47,6 +47,8 @@ sub init {
         called => 'the 2nd parameter hashref',
     );
 };
+
+# $Id$
 
 1;
 
