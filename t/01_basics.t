@@ -5,8 +5,8 @@ use strict;
 use warnings;
 
 use Test::More tests => 13 + 1;
-use Test::Exception;
 use Test::NoWarnings;
+use Test::Exception;
 
 BEGIN { use_ok('Object::Lazy') }
 

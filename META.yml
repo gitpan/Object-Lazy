@@ -1,6 +1,6 @@
 ---
 name: Object-Lazy
-version: 0.04
+version: 0.05
 author:
   - 'Steffen Winkler <steffenw at cpan.org>'
 abstract: 'Object::Lazy - create objects late from non-owned classes'
@@ -9,8 +9,8 @@ resources:
   license: http://dev.perl.org/licenses/
 requires:
   Params::Validate: 0
+  perl: 5.006001
 build_requires:
-  Test::Exception: 0
   Test::NoWarnings: 0
   Test::Simple: 0
 recommends:
@@ -20,7 +20,7 @@ recommends:
 provides:
   Object::Lazy:
     file: lib/Object/Lazy.pm
-    version: 0.04
+    version: 0.05
   Object::Lazy::Ref:
     file: lib/Object/Lazy/Ref.pm
     version: 0.01

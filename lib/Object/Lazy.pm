@@ -3,9 +3,9 @@ package Object::Lazy;
 use strict;
 use warnings;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
-use Carp ();
+use Carp qw(confess);
 use English qw(-no_match_vars $EVAL_ERROR);
 use Object::Lazy::Validate 0.01;
 
@@ -29,7 +29,7 @@ my $build_object = sub {
     $self->{build} = sub {return $built_object};
     if (! $self->{is_built} && exists $self->{logger}) {
         () = eval {
-            Carp::confess('object built');
+            confess('object built');
         };
         $self->{logger}->($EVAL_ERROR);
     }
@@ -90,7 +90,7 @@ Object::Lazy - create objects late from non-owned classes
 
 =head1 VERSION
 
-0.04
+0.05
 
 =head1 SYNOPSIS
 
