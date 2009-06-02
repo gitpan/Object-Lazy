@@ -9,6 +9,7 @@ WriteMakefile
           'EXE_FILES' => [],
           'VERSION_FROM' => 'lib/Object/Lazy.pm',
           'PREREQ_PM' => {
+                           'Test::Exception' => 0,
                            'Params::Validate' => 0,
                            'Test::Simple' => 0,
                            'Test::NoWarnings' => 0

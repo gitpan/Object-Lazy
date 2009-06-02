@@ -3,7 +3,7 @@ package Object::Lazy;
 use strict;
 use warnings;
 
-our $VERSION = '0.05';
+our $VERSION = '0.06';
 
 use Carp qw(confess);
 use English qw(-no_match_vars $EVAL_ERROR);
@@ -90,7 +90,7 @@ Object::Lazy - create objects late from non-owned classes
 
 =head1 VERSION
 
-0.05
+0.06
 
 =head1 SYNOPSIS
 

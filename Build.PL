@@ -19,6 +19,7 @@ Module::Build->new(
         # Cwd              => 0, # perl dist
         'Test::Simple'     => 0, # for Test::More
         'Test::NoWarnings' => 0,
+        'Test::Exception'  => 0,
     },
     recommends => {
         # build
