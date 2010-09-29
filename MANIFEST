@@ -8,8 +8,14 @@ lib/Object/Lazy/Ref.pm
 lib/Object/Lazy/Validate.pm
 MANIFEST			This list of files
 README
-t/01_basics.t
-t/02_ref.t
+t/01_use.t
+t/02_method.t
+t/03_can.t
+t/04_isa.t
+t/05_given_isa.t
+t/06_logger.t
+t/07_no_ref.t
+t/08_ref.t
 t/chars.t
 t/perl_critic.t
 t/pod.t
