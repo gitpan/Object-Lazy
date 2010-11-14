@@ -14,6 +14,7 @@ WriteMakefile
   'PREREQ_PM' => {
                    'Test::Exception' => 0,
                    'English' => 0,
+                   'version' => 0,
                    'Test::NoWarnings' => 0,
                    'Carp' => 0,
                    'Test::More' => 0,
