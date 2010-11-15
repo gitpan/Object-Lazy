@@ -18,6 +18,7 @@ WriteMakefile
                    'Test::NoWarnings' => 0,
                    'Carp' => 0,
                    'Test::More' => 0,
+                   'Test::Differences' => 0,
                    'Params::Validate' => 0,
                    'Cwd' => 0
                  }

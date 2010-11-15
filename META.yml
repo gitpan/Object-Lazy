@@ -4,6 +4,7 @@ author:
   - 'Steffen Winkler <steffenw at cpan.org>'
 build_requires:
   Cwd: 0
+  Test::Differences: 0
   Test::Exception: 0
   Test::More: 0
   Test::NoWarnings: 0
@@ -19,7 +20,7 @@ name: Object-Lazy
 provides:
   Object::Lazy:
     file: lib/Object/Lazy.pm
-    version: 0.08
+    version: 0.09
   Object::Lazy::Ref:
     file: lib/Object/Lazy/Ref.pm
     version: 0.01
@@ -39,4 +40,4 @@ requires:
   perl: 5.006
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.08
+version: 0.09
