@@ -31,3 +31,4 @@ t/pod_coverage.t
 t/prereq_build.t
 Makefile.PL
 META.yml
+META.json
