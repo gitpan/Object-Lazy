@@ -9,7 +9,6 @@ build_requires:
   Test::Exception: 0
   Test::More: 0
   Test::NoWarnings: 0
-  version: 0
 configure_requires:
   Module::Build: 0.38
 dynamic_config: 1
@@ -22,13 +21,13 @@ name: Object-Lazy
 provides:
   Object::Lazy:
     file: lib/Object/Lazy.pm
-    version: 0.11
+    version: 0.12
   Object::Lazy::Ref:
     file: lib/Object/Lazy/Ref.pm
-    version: 0.01
+    version: 0.12
   Object::Lazy::Validate:
     file: lib/Object/Lazy/Validate.pm
-    version: 0.08
+    version: 0.12
   Object::Lazy::Version:
     file: lib/Object/Lazy.pm
     version: 0
@@ -37,8 +36,8 @@ recommends:
   Test::Pod::Coverage: 1.04
 requires:
   Carp: 0
-  English: 0
+  Try::Tiny: 0
   perl: 5.006
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.11
+version: 0.12
