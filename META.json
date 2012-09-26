@@ -44,7 +44,7 @@
    "provides" : {
       "Object::Lazy" : {
          "file" : "lib/Object/Lazy.pm",
-         "version" : "0.12"
+         "version" : "0.13"
       },
       "Object::Lazy::Ref" : {
          "file" : "lib/Object/Lazy/Ref.pm",
@@ -65,5 +65,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.12"
+   "version" : "0.13"
 }
