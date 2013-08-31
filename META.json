@@ -4,7 +4,7 @@
       "Steffen Winkler <steffenw at cpan.org>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.112621",
+   "generated_by" : "Module::Build version 0.38, CPAN::Meta::Converter version 2.132140",
    "license" : [
       "perl_5"
    ],
@@ -16,12 +16,12 @@
    "prereqs" : {
       "build" : {
          "requires" : {
-            "Cwd" : 0,
-            "Params::Validate" : 0,
+            "Cwd" : "0",
+            "Params::Validate" : "0",
             "Test::Differences" : "0.60",
-            "Test::Exception" : 0,
-            "Test::More" : 0,
-            "Test::NoWarnings" : 0
+            "Test::Exception" : "0",
+            "Test::More" : "0",
+            "Test::NoWarnings" : "0"
          }
       },
       "configure" : {
@@ -35,8 +35,8 @@
             "Test::Pod::Coverage" : "1.04"
          },
          "requires" : {
-            "Carp" : 0,
-            "Try::Tiny" : 0,
+            "Carp" : "0",
+            "Try::Tiny" : "0",
             "perl" : "5.006"
          }
       }
@@ -44,7 +44,7 @@
    "provides" : {
       "Object::Lazy" : {
          "file" : "lib/Object/Lazy.pm",
-         "version" : "0.13"
+         "version" : "0.14"
       },
       "Object::Lazy::Ref" : {
          "file" : "lib/Object/Lazy/Ref.pm",
@@ -56,7 +56,7 @@
       },
       "Object::Lazy::Version" : {
          "file" : "lib/Object/Lazy.pm",
-         "version" : 0
+         "version" : "0"
       }
    },
    "release_status" : "stable",
@@ -65,5 +65,5 @@
          "http://dev.perl.org/licenses/"
       ]
    },
-   "version" : "0.13"
+   "version" : "0.14"
 }
